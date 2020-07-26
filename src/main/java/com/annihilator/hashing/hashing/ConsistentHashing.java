@@ -8,6 +8,7 @@ import com.annihilator.hashing.dto.Result;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class ConsistentHashing implements Hashing {
   private ConsistentHashing(ConsistentHashingConfiguration config) {
 
     this.RING_SIZE = config.getSizeOfRing();
-    this.ring = new ArrayList<>(RING_SIZE);
+    this.ring = new LinkedList<>();
     this.connectedNodes = new HashMap<>();
     this.config = config;
 
@@ -77,7 +78,7 @@ public class ConsistentHashing implements Hashing {
     int totalNodeInTheCluster = connectedNodes.size();
     int noOfVirtualNodesPerNode = config.getNoOfVirtualNodes();
 
-    if (totalNodeInTheCluster * noOfVirtualNodesPerNode == RING_SIZE) {
+    if (totalNodeInTheCluster * (noOfVirtualNodesPerNode + 1) == RING_SIZE) {
       logger.error("Ring is full can't add more node to the cluster");
 
       return -1;
@@ -185,9 +186,10 @@ public class ConsistentHashing implements Hashing {
     }
 
     List<Integer> positions = connectedNodes.get(node);
+    connectedNodes.remove(node);
 
     for(Integer pos: positions) {
-      ring.remove(pos);
+      ring.set(pos, null);
     }
 
     if(config.isDebugging()) {
