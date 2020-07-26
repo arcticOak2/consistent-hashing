@@ -132,7 +132,7 @@ public class ConsistentHashing implements Hashing {
 
         positions.add(pos);
 
-        if(positions.size() == config.getNoOfVirtualNodes()) {
+        if(positions.size() == config.getNoOfVirtualNodes() + 1) { // one is for the actual node
           break;
         }
       }

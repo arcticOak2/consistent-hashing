@@ -12,5 +12,5 @@ logging:
     com.annihilator.hashing: INFO
 
 sizeOfRing: 500
-noOfVirtualNodes: 5
+noOfVirtualNodes: 4
 debugging: true
