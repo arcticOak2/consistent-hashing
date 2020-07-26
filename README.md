@@ -5,7 +5,7 @@ This is a simple prototype of Consistent Hashing.
 CONFIGURATIONS
 ---
 
-All the configurations related with this project are in the file `config/hashing.yaml`.
+All the configurations related to this project are in the file `config/hashing.yaml`.
 
 HOW TO RUN
 ---
@@ -15,7 +15,7 @@ Run the main method in the file `com.annihilator.hashing.application.ConsistentH
 Postman Collection
 ---
 
-For more information download Postman collection and export it to your Postman console
+For more information, download Postman collection and export it to your Postman console
 
 <https://www.getpostman.com/collections/ae43599b2f45841f987b>
 
