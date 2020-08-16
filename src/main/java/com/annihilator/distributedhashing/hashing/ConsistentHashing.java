@@ -1,10 +1,10 @@
-package com.annihilator.hashing.hashing;
+package com.annihilator.distributedhashing.hashing;
 
-import com.annihilator.hashing.configuration.ConsistentHashingConfiguration;
-import com.annihilator.hashing.dto.Node;
-import com.annihilator.hashing.dto.NodeType;
-import com.annihilator.hashing.dto.ResponseStructure;
-import com.annihilator.hashing.dto.Result;
+import com.annihilator.distributedhashing.configuration.ConsistentHashingConfiguration;
+import com.annihilator.distributedhashing.dto.Node;
+import com.annihilator.distributedhashing.dto.NodeType;
+import com.annihilator.distributedhashing.dto.ResponseStructure;
+import com.annihilator.distributedhashing.dto.Result;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -93,6 +93,16 @@ public class ConsistentHashing implements Hashing {
     return 1;
   }
 
+  private void printRing() {
+    for(Node node: ring) {
+      if (node == null) {
+        System.out.println(0);
+      } else {
+        System.out.println(node.getAddress());
+      }
+    }
+  }
+
   @Override
   public ResponseStructure addNode(String nodeName) {
 
@@ -142,6 +152,7 @@ public class ConsistentHashing implements Hashing {
 
     if (config.isDebugging()) {
       logRingStatus();
+      printRing();
     }
 
     return ResponseStructure.getNodeAddedResponse();
@@ -161,7 +172,7 @@ public class ConsistentHashing implements Hashing {
     int pos = getNodeOrReqPosition(reqId);
 
     while (true) {
-
+      printRing();
       if (null != ring.get(pos)) {
         body.put("node", ring.get(pos).getAddress());
 
@@ -194,6 +205,7 @@ public class ConsistentHashing implements Hashing {
 
     if(config.isDebugging()) {
       logRingStatus();
+      printRing();
     }
 
     return ResponseStructure.getNodeRemovedResponse();

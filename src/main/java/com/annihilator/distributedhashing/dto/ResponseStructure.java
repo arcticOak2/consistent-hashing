@@ -1,4 +1,4 @@
-package com.annihilator.hashing.dto;
+package com.annihilator.distributedhashing.dto;
 
 import java.util.Map;
 

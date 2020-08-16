@@ -1,6 +1,6 @@
-package com.annihilator.hashing.hashing;
+package com.annihilator.distributedhashing.hashing;
 
-import com.annihilator.hashing.dto.ResponseStructure;
+import com.annihilator.distributedhashing.dto.ResponseStructure;
 
 public interface Hashing {
 

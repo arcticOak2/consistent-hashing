@@ -1,10 +1,10 @@
-package com.annihilator.hashing.controller;
+package com.annihilator.distributedhashing.controller;
 
-import com.annihilator.hashing.configuration.ConsistentHashingConfiguration;
-import com.annihilator.hashing.dto.ResponseStructure;
-import com.annihilator.hashing.dto.Result;
-import com.annihilator.hashing.hashing.ConsistentHashing;
-import com.annihilator.hashing.hashing.Hashing;
+import com.annihilator.distributedhashing.configuration.ConsistentHashingConfiguration;
+import com.annihilator.distributedhashing.dto.ResponseStructure;
+import com.annihilator.distributedhashing.dto.Result;
+import com.annihilator.distributedhashing.hashing.ConsistentHashing;
+import com.annihilator.distributedhashing.hashing.Hashing;
 import com.google.gson.Gson;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;

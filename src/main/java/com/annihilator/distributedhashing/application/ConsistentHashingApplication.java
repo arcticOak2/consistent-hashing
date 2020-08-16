@@ -1,7 +1,7 @@
-package com.annihilator.hashing.application;
+package com.annihilator.distributedhashing.application;
 
-import com.annihilator.hashing.configuration.ConsistentHashingConfiguration;
-import com.annihilator.hashing.controller.ConsistentHashingController;
+import com.annihilator.distributedhashing.configuration.ConsistentHashingConfiguration;
+import com.annihilator.distributedhashing.controller.ConsistentHashingController;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 

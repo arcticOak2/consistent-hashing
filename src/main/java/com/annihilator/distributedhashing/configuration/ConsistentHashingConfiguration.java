@@ -1,4 +1,4 @@
-package com.annihilator.hashing.configuration;
+package com.annihilator.distributedhashing.configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
